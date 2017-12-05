@@ -1,2 +1,2 @@
 # ShardingJdbcDemo
-sharding jdbc demo
+[sharding-jdbc](https://github.com/shardingjdbc) 相关源码reading
