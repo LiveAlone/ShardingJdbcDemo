@@ -2,11 +2,7 @@ package org.yqj.sj.demo;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * Created by yaoqijun.
@@ -22,11 +18,5 @@ public class BootDemoApplication {
                 .banner(new DemoBanner())
                 .sources(BootDemoApplication.class)
                 .run(args);
-    }
-
-    @RequestMapping(value = "/index", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    @ResponseBody
-    public String indexPage(){
-        return "this is test index paging info label test";
     }
 }
