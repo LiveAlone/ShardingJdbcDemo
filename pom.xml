@@ -20,6 +20,13 @@
     </properties>
 
     <dependencies>
+        <!-- sharding jdbc transaction -->
+        <dependency>
+            <groupId>io.shardingjdbc</groupId>
+            <artifactId>sharding-jdbc-transaction</artifactId>
+            <version>${sharding.jdbc.core.version}</version>
+        </dependency>
+
         <dependency>
             <groupId>io.shardingjdbc</groupId>
             <artifactId>sharding-jdbc-core</artifactId>

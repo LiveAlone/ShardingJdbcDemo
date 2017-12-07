@@ -5,7 +5,7 @@ import io.shardingjdbc.core.api.config.ShardingRuleConfiguration;
 import io.shardingjdbc.core.api.config.TableRuleConfiguration;
 import io.shardingjdbc.core.api.config.strategy.InlineShardingStrategyConfiguration;
 import io.shardingjdbc.core.api.config.strategy.StandardShardingStrategyConfiguration;
-import org.yqj.sj.demo.raw.algorithm.ModuloShardingTableAlgorithm;
+import org.yqj.sj.demo.util.algorithm.ModuloShardingTableAlgorithm;
 import org.yqj.sj.demo.util.DataSourceUtil;
 import org.yqj.sj.demo.util.RawJdbcRepository;
 

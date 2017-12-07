@@ -1,14 +1,14 @@
 dataSources:
-  ds_0: !!org.apache.commons.dbcp.BasicDataSource
+  ds_0: !!com.alibaba.druid.pool.DruidDataSource
     driverClassName: com.mysql.jdbc.Driver
     url: jdbc:mysql://localhost:3306/demo_ds_0
     username: root
-    password: 
-  ds_1: !!org.apache.commons.dbcp.BasicDataSource
+    password: anywhere
+  ds_1: !!com.alibaba.druid.pool.DruidDataSource
     driverClassName: com.mysql.jdbc.Driver
     url: jdbc:mysql://localhost:3306/demo_ds_1
     username: root
-    password: 
+    password: anywhere
 
 shardingRule:  
   tables:

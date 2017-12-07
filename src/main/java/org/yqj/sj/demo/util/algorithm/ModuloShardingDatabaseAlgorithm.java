@@ -1,4 +1,4 @@
-package org.yqj.sj.demo.raw.algorithm;
+package org.yqj.sj.demo.util.algorithm;
 
 import io.shardingjdbc.core.api.algorithm.sharding.PreciseShardingValue;
 import io.shardingjdbc.core.api.algorithm.sharding.standard.PreciseShardingAlgorithm;
