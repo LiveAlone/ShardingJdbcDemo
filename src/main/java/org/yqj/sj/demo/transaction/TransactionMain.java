@@ -30,7 +30,7 @@ public class TransactionMain {
         dropTable(dataSource);
         createTable(dataSource);
         insert(dataSource);
-        updateFailure(dataSource);
+//        updateFailure(dataSource);
     }
 
     private static void createTable(final DataSource dataSource) throws SQLException {
@@ -111,12 +111,12 @@ public class TransactionMain {
         return result;
     }
 
-    private static SoftTransactionConfiguration getSoftTransactionConfiguration(final DataSource dataSource) {
-        SoftTransactionConfiguration result = new SoftTransactionConfiguration(dataSource);
-        if (useNestedJob) {
-            result.setBestEffortsDeliveryJobConfiguration(Optional.of(new NestedBestEffortsDeliveryJobConfiguration()));
-        }
-        result.setTransactionLogDataSource(createTransactionLogDataSource());
-        return result;
-    }
+//    private static SoftTransactionConfiguration getSoftTransactionConfiguration(final DataSource dataSource) {
+//        SoftTransactionConfiguration result = new SoftTransactionConfiguration(dataSource);
+//        if (useNestedJob) {
+//            result.setBestEffortsDeliveryJobConfiguration(Optional.of(new NestedBestEffortsDeliveryJobConfiguration()));
+//        }
+//        result.setTransactionLogDataSource(createTransactionLogDataSource());
+//        return result;
+//    }
 }
