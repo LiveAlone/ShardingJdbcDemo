@@ -89,7 +89,8 @@ public class RawJdbcRepository {
     }
 
     private void execute(final DataSource dataSource, final String sql) throws SQLException {
-        try (Connection conn = dataSource.getConnection(); Statement statement = conn.createStatement()) {
+        try (Connection conn = dataSource.getConnection();
+             Statement statement = conn.createStatement()) {
             statement.execute(sql);
         }
     }
