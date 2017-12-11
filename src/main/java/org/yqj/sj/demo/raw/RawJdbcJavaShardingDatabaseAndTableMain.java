@@ -11,6 +11,7 @@ import org.yqj.sj.demo.util.RawJdbcRepository;
 
 import javax.sql.DataSource;
 import java.sql.SQLException;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
@@ -31,7 +32,7 @@ public class RawJdbcJavaShardingDatabaseAndTableMain {
         shardingRuleConfig.getBindingTableGroups().add("t_order, t_order_item");
         shardingRuleConfig.setDefaultDatabaseShardingStrategyConfig(new InlineShardingStrategyConfiguration("user_id", "demo_ds_${user_id % 2}"));
         shardingRuleConfig.setDefaultTableShardingStrategyConfig(new StandardShardingStrategyConfiguration("order_id", ModuloShardingTableAlgorithm.class.getName()));
-        return ShardingDataSourceFactory.createDataSource(createDataSourceMap(), shardingRuleConfig, new HashMap<String, Object>(), new Properties());
+        return ShardingDataSourceFactory.createDataSource(createDataSourceMap(), shardingRuleConfig, Collections.emptyMap(), new Properties());
     }
 
     private static TableRuleConfiguration getOrderTableRuleConfiguration() {

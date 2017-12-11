@@ -12,7 +12,7 @@ public class LaxerMain {
         String sql = "SELECT i.* FROM t_order o JOIN t_order_item i ON o.order_id=i.order_id WHERE o.user_id=? AND o.order_id=?";
         Lexer lexer = new MySQLLexer(sql);
 
-        for (int i=0; i<20; i++){
+        for (int i=0; i< 20; i++){
             lexer.nextToken();
             printToken(lexer.getCurrentToken());
         }

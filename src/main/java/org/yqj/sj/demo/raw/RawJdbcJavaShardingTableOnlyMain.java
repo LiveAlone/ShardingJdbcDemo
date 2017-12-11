@@ -7,6 +7,7 @@ import org.yqj.sj.demo.util.DataSourceUtil;
 import org.yqj.sj.demo.util.RawJdbcRepository;
 import javax.sql.DataSource;
 import java.sql.SQLException;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
@@ -24,7 +25,7 @@ public class RawJdbcJavaShardingTableOnlyMain {
         shardingRuleConfig.getTableRuleConfigs().add(getOrderTableRuleConfiguration());
         shardingRuleConfig.getTableRuleConfigs().add(getOrderItemTableRuleConfiguration());
         shardingRuleConfig.getBindingTableGroups().add("t_order, t_order_item");
-        return ShardingDataSourceFactory.createDataSource(createDataSourceMap(), shardingRuleConfig, new HashMap<String, Object>(), new Properties());
+        return ShardingDataSourceFactory.createDataSource(createDataSourceMap(), shardingRuleConfig, Collections.emptyMap(), new Properties());
     }
 
     private static TableRuleConfiguration getOrderTableRuleConfiguration() {
@@ -37,7 +38,7 @@ public class RawJdbcJavaShardingTableOnlyMain {
 
     /**
      * 创建数据表的配置规则
-     * @return
+     * @return item 表相关配置方式
      */
     private static TableRuleConfiguration getOrderItemTableRuleConfiguration() {
         TableRuleConfiguration orderItemTableRuleConfig = new TableRuleConfiguration();
@@ -47,7 +48,7 @@ public class RawJdbcJavaShardingTableOnlyMain {
     }
 
     private static Map<String, DataSource> createDataSourceMap(){
-        Map<String, DataSource> result = new HashMap<>();
+        Map<String, DataSource> result = new HashMap<>(1);
         result.put("demo_ds", DataSourceUtil.createDataSource("demo_ds"));
         return result;
     }
